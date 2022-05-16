@@ -13,6 +13,7 @@ services:
       - HOST=0.0.0.0
       - NODE_ENV=development
       - APP_KEY=3vlNXXhbckXg3VYhb1G8KLRaL0xvbPUF
+      - APP_NAME=WaterLedger
       - CACHE_VIEWS=false
       - DRIVE_DISK=local
       - DB_CONNECTION=pg
@@ -46,7 +47,7 @@ services:
       - 3000:3000
     environment:
       - REACT_APP_WL_CONTRACT_DEPLOYMENT_URL=http://localhost:3002/
-      - REACT_APP_PROVIDER_URL=wss://goerli.infura.io/ws/v3/${INFURA_PROJECT_ID}
+      - REACT_APP_PROVIDER_URL=${PROVIDER_URL}
       - REACT_APP_API_URL=http://localhost:3002/
       - REACT_APP_WEBSOCKET=ws://localhost:3002
     depends_on:
@@ -66,6 +67,8 @@ services:
       - db
       - api
     command: npm start
+    environment:
+      - API_HOST=http://localhost:3002
 
   db:
     image: postgres:14

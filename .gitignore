@@ -2,3 +2,4 @@
 /dashboard
 /api
 .env
+.DS_Store
