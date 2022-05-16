@@ -24,10 +24,9 @@ services:
       - WALLET_LOCATION=wallets
       - BLOCKCHAIN_ENVIRONMENT=production
       - BLOCKCHAIN=ethereum
-      - PROVIDER_URL=wss://goerli.infura.io/ws/v3/${INFURA_PROJECT_ID}
+      - PROVIDER_URL=${PROVIDER_URL}
       - PRIVATE_KEY=${PRIVATE_KEY}
-      - DAML_JWT_SECRET=${DAML_JWT_SECRET}
-      - ADMIN_PASSWORD=UNIQUE_VALUE_1
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
     depends_on:
       - db
     command: 
