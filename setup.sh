@@ -9,6 +9,7 @@ applicationName="Water Ledger"
 apiRepo=git@github.com:civicledger/wat-adonis-api.git
 dashboardRepo=git@github.com:civicledger/waterledger-dashboard.git
 adminRepo=git@github.com:civicledger/waterledger-admin.git
+contractsRepo=git@github.com:civicledger/waterledger-contracts.git
 
 if [ -d "./api" ]
 then
@@ -35,6 +36,15 @@ else
     echo -e "${CYAN}Cloning admin repo${NC}"
     git clone $adminRepo admin
     echo -e "${GREEN}Admin repo cloned${NC}"
+fi
+
+if [ -d "./contracts" ]
+then
+    echo "${YELLOW}Smart Contracts repo has already been cloned${NC}"
+else
+    echo -e "${CYAN}Cloning smart contracts repo${NC}"
+    git clone $contractsRepo admin
+    echo -e "${GREEN}Smart contracts repo cloned${NC}"
 fi
 
 echo -e "${GREEN}${applicationName}${NC} should now be set up. Run ${GRAY}docker-compose up${NC} to launch application."
