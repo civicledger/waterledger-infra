@@ -43,8 +43,14 @@ then
     echo "${YELLOW}Smart Contracts repo has already been cloned${NC}"
 else
     echo -e "${CYAN}Cloning smart contracts repo${NC}"
-    git clone $contractsRepo admin
+    git clone $contractsRepo contracts
     echo -e "${GREEN}Smart contracts repo cloned${NC}"
 fi
+
+if [ ! -f ".env" ]
+then
+    cp .env.example .env
+fi
+
 
 echo -e "${GREEN}${applicationName}${NC} should now be set up. Run ${GRAY}docker-compose up${NC} to launch application."

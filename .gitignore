@@ -1,5 +1,6 @@
 /admin
 /dashboard
 /api
+/contracts
 .env
 .DS_Store

@@ -28,6 +28,7 @@ services:
       - PROVIDER_URL=${PROVIDER_URL}
       - PRIVATE_KEY=${PRIVATE_KEY}
       - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - DEMO_PASSWORD=${DEMO_PASSWORD}
     depends_on:
       - db
     command: 
@@ -59,7 +60,6 @@ services:
     build: ./admin
     volumes:
       - ./admin:/home/node/app
-      - ./infra/.env.admin:/home/node/app/.env
       - /home/node/app/node_modules
     ports:
       - 3001:4200
