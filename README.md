@@ -29,7 +29,7 @@ PRIVATE_KEY=
 ADMIN_PASSWORD=
 ```
 
-`PROVIDER_URL` will typically be an Infura project URL such as `wss://goerli.infura.io/ws/v3/6fed8d7d88e1460fa45cef9269218615`. Use of a `wss` is required, and we recommend Görli testnet because it's possible to get test eth for it. Use of Ganache is strongly discouraged except for testing. You need to create an account on Infura to use its url.
+`PROVIDER_URL` will typically be an Infura project URL such as `wss://goerli.infura.io/ws/v3/<long hash>`. Use of a `wss` is required, and we recommend Görli testnet because it's possible to get test eth for it. Use of Ganache is strongly discouraged except for testing. You need to create an account on Infura to use its url.
 
 `PRIVATE_KEY` is the private key of a valid account to use for deployments and management. Note that the account used must have access to test Ether.
 
