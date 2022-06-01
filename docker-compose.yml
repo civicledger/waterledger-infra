@@ -28,6 +28,7 @@ services:
       - PROVIDER_URL=${PROVIDER_URL}
       - PRIVATE_KEY=${PRIVATE_KEY}
       - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - DEMO_PASSWORD=${DEMO_PASSWORD}
     depends_on:
       - db
     command: 

@@ -27,6 +27,7 @@ Before running the docker-compose up, the following environment variables in .en
 PROVIDER_URL=
 PRIVATE_KEY=
 ADMIN_PASSWORD=
+DEMO_PASSWORD=
 ```
 
 `PROVIDER_URL` will typically be an Infura project URL such as `wss://goerli.infura.io/ws/v3/<long hash>`. Use of a `wss` is required, and we recommend Görli testnet because it's possible to get test eth for it. Use of Ganache is strongly discouraged except for testing. You need to create an account on Infura to use its url.
@@ -34,6 +35,8 @@ ADMIN_PASSWORD=
 `PRIVATE_KEY` is the private key of a valid account to use for deployments and management. Note that the account used must have access to test Ether.
 
 `ADMIN_PASSWORD` can be any memorable string to use in the seeder to create accounts, typically it's just something like `civic123`.
+
+`DEMO_PASSWORD` can be any memorable string to use in the seeder to create demo accounts. It is used by the Colorado Scheme, typically it's just something like `test123`.
 
 ## Migrations and Seeding
 
