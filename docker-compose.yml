@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   api:
     build: ./api
@@ -31,12 +31,12 @@ services:
       - DEMO_PASSWORD=${DEMO_PASSWORD}
     depends_on:
       - db
-    command: 
+    command:
       - sh
       - -c
       - |
-          node ace migration:run &&
-          npm run dev
+        node ace migration:run &&
+        npm run dev
 
   dashboard:
     stdin_open: true
@@ -57,19 +57,18 @@ services:
     command: npm start
 
   admin:
-    build: ./admin
+    build: ./admin2
     volumes:
-      - ./admin:/home/node/app
-      - ./infra/.env.admin:/home/node/app/.env
+      - ./admin2:/home/node/app
       - /home/node/app/node_modules
     ports:
-      - 3001:4200
+      - 3001:3000
     depends_on:
       - db
       - api
     command: npm start
     environment:
-      - API_HOST=http://localhost:3002
+      - REACT_APP_API_HOST=http://localhost:3002
 
   db:
     image: postgres:14

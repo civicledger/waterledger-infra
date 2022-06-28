@@ -8,7 +8,7 @@ NC='\033[0m'
 applicationName="Water Ledger"
 apiRepo=git@github.com:civicledger/wat-adonis-api.git
 dashboardRepo=git@github.com:civicledger/waterledger-dashboard.git
-adminRepo=git@github.com:civicledger/waterledger-admin.git
+admin2Repo=git@github.com:civicledger/waterledger-admin2.git
 contractsRepo=git@github.com:civicledger/waterledger-contracts.git
 
 if [ -d "./api" ]
@@ -29,13 +29,13 @@ else
     echo -e "${GREEN}Dashboard repo cloned${NC}"
 fi
 
-if [ -d "./admin" ]
+if [ -d "./admin2" ]
 then
-    echo "${YELLOW}Admin repo has already been cloned${NC}"
+    echo -e "${YELLOW}Admin2 repo has already been cloned${NC}"
 else
-    echo -e "${CYAN}Cloning admin repo${NC}"
-    git clone $adminRepo admin
-    echo -e "${GREEN}Admin repo cloned${NC}"
+    echo -e "${CYAN}Cloning admin2 repo${NC}"
+    git clone $admin2Repo admin2
+    echo -e "${GREEN}Admin2 repo cloned${NC}"
 fi
 
 if [ -d "./contracts" ]
@@ -43,7 +43,7 @@ then
     echo "${YELLOW}Smart Contracts repo has already been cloned${NC}"
 else
     echo -e "${CYAN}Cloning smart contracts repo${NC}"
-    git clone $contractsRepo admin
+    git clone $contractsRepo contract
     echo -e "${GREEN}Smart contracts repo cloned${NC}"
 fi
 
